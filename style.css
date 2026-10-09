@@ -284,15 +284,25 @@ h1, h2, h3, h4, .font-heading {
    CARDS FILTERING SYSTEM & SCROLL SNAP
    ========================================================================== */
 .filter-tab-btn {
-  transition: all 0.25s var(--ease-spring);
+  transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.15s ease-out;
   color: #334155;
   background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.filter-tab-btn:active {
+  transform: scale(0.97);
 }
 
 .filter-tab-btn.active {
   background-color: #0F172A !important;
   color: #FFFFFF !important;
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.2);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.22);
 }
 
 .filter-tab-btn:not(.active) {
@@ -302,7 +312,7 @@ h1, h2, h3, h4, .font-heading {
 
 .filter-tab-btn:not(.active):hover {
   color: #0F172A;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 /* Hide scrollbar utility */
@@ -316,11 +326,91 @@ h1, h2, h3, h4, .font-heading {
 }
 
 .tariff-card {
-  transition: opacity 0.35s ease, transform 0.35s var(--ease-spring);
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: 0s !important;
+  will-change: opacity, transform;
+}
+
+.tariff-card.reveal-item {
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: 0s !important;
+}
+
+/* Phase 1: Card is fading out smoothly and quickly (80ms) */
+.tariff-card.card-hiding {
+  opacity: 0 !important;
+  transform: scale(0.97) translateY(4px) !important;
+  transition: opacity 0.08s ease-out, transform 0.08s ease-out !important;
+  pointer-events: none;
+}
+
+/* Phase 2: Card enters with gentle scale & fade without delay (140-180ms) */
+.tariff-card.card-entering {
+  opacity: 0 !important;
+  transform: scale(0.97) translateY(6px) !important;
+  transition: none !important;
+}
+
+.tariff-card.card-entered {
+  opacity: 1 !important;
+  transform: scale(1) translateY(0) !important;
+  transition: opacity 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.16s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .tariff-card.hidden-card {
   display: none !important;
+}
+
+/* ==========================================================================
+   PREMIUM MODAL ANIMATIONS (Smooth Scale & Background Fade-in)
+   ========================================================================== */
+#booking-modal {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+              visibility 0s linear 0.28s;
+  will-change: opacity, visibility;
+}
+
+#booking-modal #modal-backdrop {
+  opacity: 0;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity;
+}
+
+#booking-modal #modal-content-box {
+  opacity: 0;
+  transform: scale(0.92);
+  transform-origin: center center;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.25s ease-out;
+  will-change: transform, opacity;
+}
+
+/* Active State (Modal Open) */
+#booking-modal.modal-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+              visibility 0s linear 0s;
+}
+
+#booking-modal.modal-open #modal-backdrop {
+  opacity: 1;
+}
+
+#booking-modal.modal-open #modal-content-box {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#booking-modal.modal-open #modal-content-box:hover {
+  transform: scale(1);
 }
 
 /* Custom Scrollbar */

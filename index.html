@@ -771,7 +771,7 @@
         </div>
 
         <!-- CARD 2: ДНЕВНАЯ КАРТА (Silver Double-Bezel) -->
-        <div class="tariff-card bezel-shell reveal-item delay-100 snap-center shrink-0 w-[85vw] sm:w-[70vw] md:w-auto max-w-[360px] md:max-w-none flex flex-col justify-between" data-category="day">
+        <div class="tariff-card bezel-shell reveal-item snap-center shrink-0 w-[85vw] sm:w-[70vw] md:w-auto max-w-[360px] md:max-w-none flex flex-col justify-between" data-category="day">
           <div class="bezel-core p-6 sm:p-8 flex flex-col justify-between flex-1">
             <div>
               <div class="flex items-center justify-between pb-4 border-b border-slate-100">
@@ -824,7 +824,7 @@
         </div>
 
         <!-- CARD 3: ВЫХОДНОГО ДНЯ (Silver Double-Bezel) -->
-        <div class="tariff-card bezel-shell reveal-item delay-200 snap-center shrink-0 w-[85vw] sm:w-[70vw] md:w-auto max-w-[360px] md:max-w-none flex flex-col justify-between" data-category="weekend">
+        <div class="tariff-card bezel-shell reveal-item snap-center shrink-0 w-[85vw] sm:w-[70vw] md:w-auto max-w-[360px] md:max-w-none flex flex-col justify-between" data-category="weekend">
           <div class="bezel-core p-6 sm:p-8 flex flex-col justify-between flex-1">
             <div>
               <div class="flex items-center justify-between pb-4 border-b border-slate-100">
@@ -922,7 +922,7 @@
         </div>
 
         <!-- CARD 5: ДЕТСКИЙ ПЛАТИНУМ -->
-        <div class="tariff-card bezel-shell reveal-item delay-100 snap-center shrink-0 w-[85vw] sm:w-[70vw] md:w-auto max-w-[360px] md:max-w-none flex flex-col justify-between" data-category="junior">
+        <div class="tariff-card bezel-shell reveal-item snap-center shrink-0 w-[85vw] sm:w-[70vw] md:w-auto max-w-[360px] md:max-w-none flex flex-col justify-between" data-category="junior">
           <div class="bezel-core p-6 sm:p-8 flex flex-col justify-between flex-1">
             <div>
               <div class="flex items-center justify-between pb-4 border-b border-slate-100">
@@ -1483,10 +1483,10 @@
   <!-- ========================================================================
        INTERACTIVE BOOKING MODAL (Pop-Up Lead Dialog)
        ======================================================================== -->
-  <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
-    <div id="modal-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-md transition-opacity"></div>
+  <div id="booking-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4" aria-hidden="true">
+    <div id="modal-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-md"></div>
 
-    <div class="bezel-shell max-w-lg w-full relative z-10 mx-auto shadow-2xl">
+    <div id="modal-content-box" class="bezel-shell max-w-lg w-full relative z-10 mx-auto shadow-2xl">
       <div class="bezel-core p-6 sm:p-8 bg-white relative">
         
         <button id="modal-close-btn" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-800 flex items-center justify-center text-sm font-bold transition-colors" aria-label="Закрыть">
@@ -1559,7 +1559,7 @@
           <p class="text-xs text-slate-600 max-w-xs mx-auto leading-relaxed">
             Мы уже получили ваши контактные данные. Наш фитнес-консультант позвонит вам для подтверждения времени визита.
           </p>
-          <button onclick="document.getElementById('booking-modal').classList.add('hidden')" class="btn-secondary text-xs !py-2.5 !px-6">
+          <button id="modal-success-close-btn" class="btn-secondary text-xs !py-2.5 !px-6">
             Отлично, спасибо!
           </button>
         </div>

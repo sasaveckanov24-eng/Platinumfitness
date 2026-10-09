@@ -36,15 +36,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Interactive Memberships / Cards Filtering
+  // 2. Interactive Memberships / Cards Filtering (Ultra-fast & fluid: <= 200-250ms)
   const filterTabs = document.querySelectorAll('.filter-tab-btn');
   const tariffCards = document.querySelectorAll('.tariff-card');
+  let filterTimer = null;
 
   if (filterTabs.length && tariffCards.length) {
+    // Mark initial cards as entered
+    tariffCards.forEach(card => card.classList.add('card-entered'));
+
     filterTabs.forEach(tab => {
       tab.addEventListener('click', () => {
         const filter = tab.dataset.filter;
+        if (tab.classList.contains('active')) return;
 
+        // Instantly switch tab styling with 200ms transition
         filterTabs.forEach(t => {
           t.classList.remove('active', 'bg-slate-900', 'text-white', 'shadow-sm');
           t.classList.add('text-slate-700');
@@ -55,28 +61,63 @@ document.addEventListener('DOMContentLoaded', () => {
         // Smoothly center active tab in mobile horizontal scroll
         tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
 
+        if (filterTimer) {
+          clearTimeout(filterTimer);
+          filterTimer = null;
+        }
+
+        // Fast 80ms fade out for cards that are leaving
         tariffCards.forEach(card => {
           const category = card.dataset.category;
-          if (filter === 'all' || category === filter) {
-            card.classList.remove('hidden-card');
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(12px)';
-            setTimeout(() => {
-              card.style.opacity = '1';
-              card.style.transform = 'translateY(0)';
-            }, 50);
-          } else {
-            card.classList.add('hidden-card');
+          const shouldShow = (filter === 'all' || category === filter);
+          if (!shouldShow) {
+            card.classList.remove('card-entered', 'card-entering');
+            card.classList.add('card-hiding');
           }
         });
+
+        // Switch layout and smoothly animate matching cards in 140ms
+        // Total duration: 80ms + 140ms = 220ms (well within 200-250ms requirement)
+        filterTimer = setTimeout(() => {
+          tariffCards.forEach(card => {
+            const category = card.dataset.category;
+            const shouldShow = (filter === 'all' || category === filter);
+
+            if (shouldShow) {
+              const wasHidden = card.classList.contains('hidden-card') || card.classList.contains('card-hiding');
+              card.classList.remove('hidden-card', 'card-hiding');
+
+              if (wasHidden) {
+                card.classList.add('card-entering');
+                card.classList.remove('card-entered');
+                
+                // Immediate next-frame entry without artificial stagger delays
+                requestAnimationFrame(() => {
+                  requestAnimationFrame(() => {
+                    card.classList.remove('card-entering');
+                    card.classList.add('card-entered');
+                  });
+                });
+              } else {
+                card.classList.remove('card-entering');
+                card.classList.add('card-entered');
+              }
+            } else {
+              card.classList.add('hidden-card');
+              card.classList.remove('card-entering', 'card-entered', 'card-hiding');
+            }
+          });
+          filterTimer = null;
+        }, 80);
       });
     });
   }
 
-  // 3. Booking Modal System
+  // 3. Booking Modal System (Smooth Scale & Background Fade-in)
   const bookingModal = document.getElementById('booking-modal');
   const modalBackdrop = document.getElementById('modal-backdrop');
   const modalCloseBtn = document.getElementById('modal-close-btn');
+  const modalSuccessCloseBtn = document.getElementById('modal-success-close-btn');
   const modalPlanInput = document.getElementById('modal-plan-select');
   const openModalBtns = document.querySelectorAll('[data-open-modal]');
   const bookingForm = document.getElementById('booking-form');
@@ -87,29 +128,37 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalPlanInput && planName) {
       modalPlanInput.value = planName;
     }
-    bookingModal.classList.remove('hidden');
-    bookingModal.classList.add('flex');
+    bookingModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
     
-    // Focus first input
+    // Smooth fade-in and scale-in
+    bookingModal.classList.add('modal-open');
+    
+    // Smoothly focus first input after modal scale animation finishes without scroll jump
     setTimeout(() => {
       const firstInput = document.getElementById('guest-name');
-      if (firstInput) firstInput.focus();
-    }, 100);
+      if (firstInput && bookingModal.classList.contains('modal-open')) {
+        firstInput.focus({ preventScroll: true });
+      }
+    }, 290);
   };
 
   const closeModal = () => {
-    if (!bookingModal) return;
-    bookingModal.classList.add('hidden');
-    bookingModal.classList.remove('flex');
+    if (!bookingModal || !bookingModal.classList.contains('modal-open')) return;
+    bookingModal.classList.remove('modal-open');
+    bookingModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-    if (bookingForm) {
-      bookingForm.reset();
-      bookingForm.classList.remove('hidden');
-    }
-    if (formSuccess) {
-      formSuccess.classList.add('hidden');
-    }
+
+    // Wait for the 280ms closing transition to finish before resetting form state
+    setTimeout(() => {
+      if (bookingForm) {
+        bookingForm.reset();
+        bookingForm.classList.remove('hidden');
+      }
+      if (formSuccess) {
+        formSuccess.classList.add('hidden');
+      }
+    }, 280);
   };
 
   openModalBtns.forEach(btn => {
@@ -122,10 +171,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
   if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+  if (modalSuccessCloseBtn) modalSuccessCloseBtn.addEventListener('click', closeModal);
 
   // Close with Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && bookingModal && !bookingModal.classList.contains('hidden')) {
+    if (e.key === 'Escape' && bookingModal && bookingModal.classList.contains('modal-open')) {
       closeModal();
     }
   });
