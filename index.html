@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Фитнес-клуб «Платинум» Сызрань | Премиум-фитнес от чемпионки России Екатерины Платошиной</title>
+  <meta name="description" content="Премиальный фитнес-клуб «Платинум» в центре Сызрани (ул. Советская, 146). 1340 м² пространства, тренажерный зал, кардиозона, групповые занятия, функциональный тренинг, раздевалки с душевыми и солярием. Основатель — чемпионка России Екатерина Платошина.">
+  
+  <!-- Favicon / Web Icon -->
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+
+  <!-- Premium Typography: Plus Jakarta Sans & Outfit (Zero Banned Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            platinum: {
+              50: '#F8FAFC',
+              100: '#F1F5F9',
+              200: '#E2E8F0',
+              300: '#CBD5E1',
+              400: '#94A3B8',
+              500: '#64748B',
+              600: '#475569',
+              700: '#334155',
+              800: '#1E293B',
+              900: '#0F172A',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Design System Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-slate-800 antialiased selection:bg-slate-900 selection:text-white overflow-x-hidden pb-20 sm:pb-12">
+
+  <!-- ========================================================================
+       TOP FLOATING ISLAND HEADER (Strictly Fixed at Top)
+       ======================================================================== -->
+  <header class="fixed top-3 sm:top-5 left-0 right-0 z-50 px-3 sm:px-6 pointer-events-none">
+    <div class="max-w-6xl mx-auto backdrop-blur-xl bg-white/85 border border-slate-200/80 rounded-full px-4 sm:px-6 py-2.5 sm:py-3 shadow-[0_12px_32px_rgba(15,23,42,0.06)] flex items-center justify-between pointer-events-auto">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-2 group" aria-label="Фитнес-клуб Платинум">
+        <div class="w-28 sm:w-36 h-9 sm:h-10 flex items-center overflow-hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" class="w-full h-full object-contain">
+            <g transform="translate(210, 10)">
+              <rect x="0" y="0" width="80" height="65" fill="none" stroke="#0F172A" stroke-width="3" />
+              <rect x="20" y="16" width="12" height="49" fill="#0F172A" />
+              <rect x="48" y="16" width="12" height="49" fill="#0F172A" />
+              <path d="M80,3 L81.5,7.5 L86,9 L81.5,10.5 L80,15 L78.5,10.5 L74,9 L78.5,7.5 Z" fill="#0F172A" />
+            </g>
+            <text x="250" y="112" font-family="'Outfit', 'Plus Jakarta Sans', serif" font-weight="700" letter-spacing="6px" fill="#0F172A" font-size="28" text-anchor="middle">ПЛАТИНУМ</text>
+            <text x="250" y="136" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" letter-spacing="5px" fill="#475569" font-size="12" text-anchor="middle">фитнес клуб</text>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-6 text-[13px] font-semibold text-slate-600 tracking-wide uppercase">
+        <a href="#about" class="hover:text-slate-950 transition-colors">О клубе</a>
+        <a href="#zones" class="hover:text-slate-950 transition-colors">Зоны клуба</a>
+        <a href="#benefits" class="hover:text-slate-950 transition-colors">Преимущества</a>
+        <a href="#founder" class="hover:text-slate-950 transition-colors">Основатель</a>
+        <a href="#tariffs" class="hover:text-slate-950 transition-colors">Абонементы</a>
+        <a href="#coaches" class="hover:text-slate-950 transition-colors">Тренеры</a>
+        <a href="#contacts" class="hover:text-slate-950 transition-colors">Контакты</a>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="flex items-center gap-3">
+        <!-- Phone Link (Desktop) -->
+        <a href="tel:+79278900011" class="hidden md:flex flex-col text-right">
+          <span class="text-xs font-bold text-slate-900 tracking-tight">+7 (927) 890-00-11</span>
+          <span class="text-[10px] text-emerald-600 font-medium flex items-center justify-end gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Открыто до 23:00
+          </span>
+        </a>
+
+        <!-- Quick Booking CTA -->
+        <button data-open-modal data-plan="Гостевой визит" class="hidden sm:inline-flex btn-primary !py-2 !px-4 !text-xs">
+          <span>Записаться</span>
+          <span class="btn-icon-bubble !w-6 !h-6">
+            <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </span>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-full hover:bg-slate-100 transition-colors" aria-label="Открыть мобильное меню" aria-expanded="false">
+          <div class="w-6 h-5 flex flex-col justify-between items-center relative">
+            <span class="hamburger-line hamburger-top w-5 h-0.5 bg-slate-900 rounded-full"></span>
+            <span class="hamburger-line w-3.5 h-0.5 bg-slate-900 rounded-full self-start"></span>
+            <span class="hamburger-line hamburger-bottom w-5 h-0.5 bg-slate-900 rounded-full"></span>
+          </div>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MOBILE FULLSCREEN NAVIGATION DRAWER
+       ======================================================================== -->
+  <div id="mobile-drawer" class="fixed inset-0 z-40 bg-white/95 backdrop-blur-2xl flex flex-col justify-between pt-24 pb-8 px-6 lg:hidden">
+    <div class="space-y-6">
+      <div class="badge-eyebrow">
+        <span class="badge-dot"></span> МЕНЮ КЛУБА «ПЛАТИНУМ»
+      </div>
+      
+      <nav class="flex flex-col space-y-4">
+        <a href="#about" class="mobile-nav-link text-2xl font-bold font-heading text-slate-900 hover:text-slate-600 transition-colors">О клубе</a>
+        <a href="#zones" class="mobile-nav-link text-2xl font-bold font-heading text-slate-900 hover:text-slate-600 transition-colors">Зоны клуба</a>
+        <a href="#benefits" class="mobile-nav-link text-2xl font-bold font-heading text-slate-900 hover:text-slate-600 transition-colors">Преимущества</a>
+        <a href="#founder" class="mobile-nav-link text-2xl font-bold font-heading text-slate-900 hover:text-slate-600 transition-colors">Основатель и философия</a>
+        <a href="#tariffs" class="mobile-nav-link text-2xl font-bold font-heading text-slate-900 hover:text-slate-600 transition-colors">Клубные карты и цены</a>
+        <a href="#coaches" class="mobile-nav-link text-2xl font-bold font-heading text-slate-900 hover:text-slate-600 transition-colors">Тренерский состав</a>
+        <a href="#faq" class="mobile-nav-link text-2xl font-bold font-heading text-slate-900 hover:text-slate-600 transition-colors">Вопросы и ответы</a>
+        <a href="#contacts" class="mobile-nav-link text-2xl font-bold font-heading text-slate-900 hover:text-slate-600 transition-colors">Контакты и адрес</a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-slate-200/80 space-y-4">
+      <div class="flex items-center justify-between text-sm">
+        <span class="text-slate-500">г. Сызрань, ул. Советская, 146</span>
+        <span class="text-xs text-emerald-600 font-semibold">07:00 – 23:00</span>
+      </div>
+      <a href="tel:+79278900011" class="text-lg font-bold text-slate-900 block">+7 (927) 890-00-11</a>
+      <button data-open-modal data-plan="Гостевой визит" class="btn-primary w-full justify-center !py-3.5">
+        <span>Записаться на гостевой визит</span>
+        <span class="btn-icon-bubble">
+          <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       HERO SECTION (Mobile-First, min-h-[100dvh], Doppelrand Framed Portrait)
+       ======================================================================== -->
+  <section id="hero" class="relative min-h-[100dvh] flex items-center pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
+    <div class="absolute top-1/4 -left-32 w-96 h-96 bg-slate-100 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute bottom-10 -right-32 w-96 h-96 bg-slate-200/60 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        
+        <!-- Hero Text & Content (col-span-7) -->
+        <div class="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
+          
+          <div class="reveal-item">
+            <div class="badge-eyebrow">
+              <span class="badge-dot"></span> ПРЕМИУМ-ФИТНЕС В СЫЗРАНИ | 1340 М²
+            </div>
+          </div>
+
+          <h1 class="reveal-item delay-100 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-heading leading-[1.08] text-slate-900">
+            Фитнес-клуб, <br class="hidden sm:inline">
+            <span class="text-platinum-gradient underline decoration-slate-300/60 decoration-2 underline-offset-8">созданный чемпионом</span>
+          </h1>
+
+          <p class="reveal-item delay-200 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
+            Пространство эталонного фитнеса от <strong class="text-slate-900 font-semibold">Екатерины Платошиной</strong> — президента федерации РББС, мастера спорта и абсолютной чемпионки России. 1340 м² современного оборудования, безупречный комфорт и клубная атмосфера без очередей.
+          </p>
+
+          <div class="reveal-item delay-300 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+            <button data-open-modal data-plan="Гостевой визит" class="btn-primary">
+              <span>Записаться на первый визит</span>
+              <span class="btn-icon-bubble">
+                <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </button>
+
+            <a href="#about" class="btn-secondary">
+              <span>Видео и о клубе</span>
+              <svg class="w-4 h-4 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Trust metrics ribbon -->
+          <div class="reveal-item delay-400 pt-6 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 tracking-tight">1 340 <span class="text-base text-slate-400 font-normal">м²</span></div>
+              <div class="text-xs text-slate-500 font-medium mt-0.5">Площадь пространства</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 tracking-tight">60+</div>
+              <div class="text-xs text-slate-500 font-medium mt-0.5">Тренажеров мировых брендов</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 tracking-tight">0 <span class="text-base text-slate-400 font-normal">мин</span></div>
+              <div class="text-xs text-slate-500 font-medium mt-0.5">Очередей в залах</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 tracking-tight">РББС</div>
+              <div class="text-xs text-slate-500 font-medium mt-0.5">Федерация бодибилдинга</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hero Visual: Founder Portrait UywzjmAaMm0.jpg (col-span-5) -->
+        <div class="lg:col-span-5 reveal-item delay-200">
+          <div class="bezel-shell max-w-md mx-auto relative group">
+            <div class="bezel-core overflow-hidden relative aspect-[3/4] bg-slate-100 flex items-center justify-center">
+              
+              <img 
+                src="UywzjmAaMm0.jpg" 
+                alt="Екатерина Платошина — основатель фитнес-клуба Платинум" 
+                class="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                loading="eager"
+              >
+
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+
+              <div class="absolute bottom-4 left-4 right-4 backdrop-blur-md bg-white/90 border border-white/60 p-3.5 rounded-2xl shadow-lg">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="text-sm font-bold text-slate-900 font-heading leading-tight">Екатерина Платошина</h3>
+                    <p class="text-[11px] text-slate-600 font-medium">Основатель клуба • Мастер спорта РФ</p>
+                  </div>
+                  <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-900 text-white text-[11px] font-bold">
+                    ★
+                  </span>
+                </div>
+              </div>
+
+              <div class="absolute top-4 left-4 backdrop-blur-md bg-slate-900/80 text-white text-[10px] font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5 shadow">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                Тест-драйв 1 день
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: О КЛУБЕ «ПЛАТИНУМ» + ВСТРОЕННЫЙ RUTUBE ВИДЕОПЛЕЕР
+       ======================================================================== -->
+  <section id="about" class="py-20 sm:py-32 bg-slate-50/70 border-t border-slate-200/60 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        
+        <!-- Manifesto & Club Story (col-span-6) -->
+        <div class="lg:col-span-6 space-y-6 text-left reveal-item">
+          
+          <div class="badge-eyebrow">
+            <span class="badge-dot"></span> О КЛУБЕ «ПЛАТИНУМ»
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-heading text-slate-900 leading-[1.12]">
+            Спортивный клуб нового поколения в центре Сызрани
+          </h2>
+
+          <p class="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
+            «ПЛАТИНУМ – современный спортивный клуб, расположенный в центре Сызрани. Оснащение и сервис предоставляемых услуг фитнес - центра на уровне лучших клубов России. Использование последних достижений инженерии и фитнес – индустрии, клиентский сервис, изысканный дизайн внутреннего пространства обеспечивают беспрецедентный уровень комфорта, достойный посетителей клуба – успешных людей нового поколения.»
+          </p>
+
+          <div class="pt-4 grid grid-cols-2 gap-4 border-t border-slate-200/80 text-xs sm:text-sm">
+            <div class="p-4 rounded-2xl bg-white border border-slate-200/70 shadow-sm">
+              <div class="font-bold text-slate-900 font-heading text-sm">Центр города</div>
+              <div class="text-slate-500 text-xs mt-1">г. Сызрань, ул. Советская 146</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-white border border-slate-200/70 shadow-sm">
+              <div class="font-bold text-slate-900 font-heading text-sm">Сервис топ-клубов</div>
+              <div class="text-slate-500 text-xs mt-1">Передовая инженерия и акустика</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Rutube Video Player (col-span-6 - Premium Double-Bezel Frame) -->
+        <div class="lg:col-span-6 reveal-item delay-100">
+          <div class="bezel-shell relative group shadow-2xl">
+            <div class="bezel-core p-2.5 sm:p-3 bg-slate-950 rounded-[calc(2rem-0.35rem)]">
+              
+              <!-- Responsive Video Container -->
+              <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-black border border-slate-800 shadow-2xl">
+                <iframe 
+                  src="https://rutube.ru/play/embed/cebfac621679b2438555fb4533599ea9?t=2" 
+                  class="w-full h-full border-0 absolute inset-0"
+                  allow="clipboard-write; autoplay; fullscreen" 
+                  webkitAllowFullScreen 
+                  mozallowfullscreen 
+                  allowFullScreen
+                  title="Видео-экскурсия по фитнес-клубу Платинум в Сызрани"
+                  loading="lazy"
+                ></iframe>
+              </div>
+
+              <!-- Sleek Player Meta Bar -->
+              <div class="px-3.5 py-3 flex items-center justify-between text-xs text-slate-300">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                  <span class="font-bold text-white font-heading">Видео-экскурсия</span>
+                  <span class="text-slate-400 text-[11px] hidden sm:inline">| Атмосфера и оснащение клуба</span>
+                </div>
+                <span class="text-[10px] tracking-wider uppercase bg-white/10 px-2.5 py-1 rounded-full text-slate-300 border border-white/10 font-semibold">
+                  RUTUBE
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: ЗОНЫ КЛУБА (Detailed 5 Zones Showcase)
+       ======================================================================== -->
+  <section id="zones" class="py-20 sm:py-28 bg-white border-y border-slate-200/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mb-12 sm:mb-16 space-y-3">
+        <div class="badge-eyebrow">
+          <span class="badge-dot"></span> ПРОСТРАНСТВО КЛУБА
+        </div>
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-heading text-slate-900">
+          Зоны клуба «Платинум»
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Продуманное зонирование каждого квадратного метра: от тяжелого силового железа и высокоинтенсивного функционала до просторного танцевального зала и уютных раздевалок.
+        </p>
+      </div>
+
+      <!-- 5 Dedicated Zones Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8">
+        
+        <!-- ZONE 1: ТРЕНАЖЕРНЫЙ ЗАЛ (Span 12 - Hero Card) -->
+        <div class="md:col-span-12 bezel-shell reveal-item">
+          <div class="bezel-core p-6 sm:p-10 relative overflow-hidden bg-white">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              <div class="lg:col-span-7 space-y-4">
+                <span class="inline-block px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-slate-900 text-white">
+                  Флагманская зона
+                </span>
+                <h3 class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900">
+                  Тренажерный зал
+                </h3>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                  Огромное пространство позволяет чувствовать себя максимально комфортно. Тренажерный зал разделен на несколько зон: зону функционального тренинга, зону тренажеров и зону свободных весов. Премиальное оборудование представлено всемирно известными брендами.
+                </p>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                  Отдельного внимания заслуживает зона свободных весов: гантели, силовые рамы и машины Смита, скамьи для жима и помост,— все это создает рабочую атмосферу и настраивает на достижение поставленных целей.
+                </p>
+                
+                <div class="pt-2 flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+                  <span class="px-3 py-1.5 rounded-lg bg-slate-100">Гантельный ряд</span>
+                  <span class="px-3 py-1.5 rounded-lg bg-slate-100">Силовые рамы и Смит</span>
+                  <span class="px-3 py-1.5 rounded-lg bg-slate-100">Жимовые скамьи</span>
+                  <span class="px-3 py-1.5 rounded-lg bg-slate-100">Тяжелоатлетический помост</span>
+                </div>
+              </div>
+
+              <div class="lg:col-span-5">
+                <div class="rounded-2xl overflow-hidden aspect-[16/10] bg-slate-100 shadow-md">
+                  <img 
+                    src="gym_interior.jpg" 
+                    alt="Тренажерный зал фитнес-клуба Платинум" 
+                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  >
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ZONE 2: ЗОНА ФУНКЦИОНАЛЬНОГО ТРЕНИНГА (Span 6) -->
+        <div class="md:col-span-6 bezel-shell reveal-item delay-100">
+          <div class="bezel-core p-6 sm:p-8 flex flex-col justify-between h-full bg-white space-y-4">
+            <div class="space-y-3">
+              <span class="inline-block px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-slate-100 text-slate-800 border border-slate-200">
+                Кросс & Выносливость
+              </span>
+              <h3 class="text-xl sm:text-2xl font-bold font-heading text-slate-900">
+                Зона функционального тренинга
+              </h3>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Для оснащения зоны функционального тренинга мы выбрали только самое лучшее: оборудование, механические беговые дорожки, гребные и лыжные тренажеры, велотренажеры. Занятия проводятся в группах и индивидуально, для тех, кто только начинает свои тренировки.
+              </p>
+            </div>
+            
+            <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-semibold text-slate-600">
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200">Гребные тренажеры</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200">Лыжные SkiErg</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200">AirBike</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200">Механические дорожки</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ZONE 3: ГРУППОВЫЕ ЗАНЯТИЯ (Span 6) -->
+        <div class="md:col-span-6 bezel-shell reveal-item delay-200">
+          <div class="bezel-core p-6 sm:p-8 flex flex-col justify-between h-full bg-white space-y-4">
+            <div class="space-y-3">
+              <span class="inline-block px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-slate-900 text-white">
+                Акустика & Драйв
+              </span>
+              <h3 class="text-xl sm:text-2xl font-bold font-heading text-slate-900">
+                Групповые занятия
+              </h3>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Большой и вместительный зал групповых программ, потрясающим звуком и светом! Зал рассчитан для комфортных и безопасных занятий. Здесь никому не будет тесно и всем хватит оборудования. Зал трансформируется под любую групповую тренировку, будь это зажигательные танцы или интенсивная силовая работа. Здесь каждое занятие проходит динамично, весело и дружно.
+              </p>
+            </div>
+
+            <div class="rounded-xl overflow-hidden aspect-[21/9] bg-slate-100 shadow-inner">
+              <img 
+                src="gym_group.jpg" 
+                alt="Зал групповых занятий клуба Платинум" 
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- ZONE 4: КАРДИОЗОНА (Span 6) -->
+        <div class="md:col-span-6 bezel-shell reveal-item">
+          <div class="bezel-core p-6 sm:p-8 flex flex-col justify-between h-full bg-white space-y-4">
+            <div class="space-y-3">
+              <span class="inline-block px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-slate-100 text-slate-800 border border-slate-200">
+                Кардио-театр
+              </span>
+              <h3 class="text-xl sm:text-2xl font-bold font-heading text-slate-900">
+                Кардиозона
+              </h3>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                предоставляет неограниченные возможности для тренировок. Она включает как всеми любимые эллиптические тренажеры и беговые дорожки, так и более редкие. Каждый тренажер имеет множество программ тренировок и позволяет контролировать пульс, тренировать выносливость и улучшать состояние сердечно-сосудистой системы.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-slate-100 flex items-center gap-3 text-xs font-semibold text-slate-700">
+              <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Контроль ЧСС</span>
+              <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Эллипсы и степперы</span>
+              <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Беговые дорожки</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ZONE 5: РАЗДЕВАЛКИ С ДУШЕВЫМИ И СОЛЯРИЕМ (Span 6) -->
+        <div class="md:col-span-6 bezel-shell reveal-item delay-100">
+          <div class="bezel-core p-6 sm:p-8 flex flex-col justify-between h-full bg-white space-y-4">
+            <div class="space-y-3">
+              <span class="inline-block px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-slate-900 text-white">
+                Комфорт & Забота
+              </span>
+              <h3 class="text-xl sm:text-2xl font-bold font-heading text-slate-900">
+                Раздевалки с душевыми
+              </h3>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                чистые и уютные раздевалки с солярием, душевыми сделают завершение вашей тренировки незабываемым. Просторные индивидуальные шкафчики, мощные фены и безупречная санитарная чистота.
+              </p>
+            </div>
+
+            <div class="rounded-xl overflow-hidden aspect-[21/9] bg-slate-100 shadow-inner">
+              <img 
+                src="gym_locker.jpg" 
+                alt="Раздевалки с душевыми и солярием клуба Платинум" 
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              >
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: ПРЕИМУЩЕСТВА КЛУБА
+       ======================================================================== -->
+  <section id="benefits" class="py-20 sm:py-28 bg-slate-50/70 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-12 sm:mb-16 space-y-3">
+        <div class="badge-eyebrow">
+          <span class="badge-dot"></span> СТАНДАРТЫ «ПЛАТИНУМ»
+        </div>
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-heading text-slate-900">
+          Инженерия премиального комфорта
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Мы объединили атмосферу закрытого клуба, передовые спортивные технологии и продуманную эргономику для максимальной результативности каждого резидента.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="bezel-shell reveal-item">
+          <div class="bezel-core p-6 sm:p-8 flex flex-col justify-between min-h-[280px]">
+            <div class="space-y-3">
+              <div class="w-10 h-10 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-bold">
+                1
+              </div>
+              <h3 class="text-xl font-bold font-heading text-slate-900">1 340 м² пространства</h3>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Высокие 5-метровые потолки, панорамные окна и система 4-кратного обмена очищенного свежего воздуха исключают духоту при любых нагрузках.
+              </p>
+            </div>
+            <div class="text-[11px] text-slate-500 font-semibold">Чистый воздух и естественный свет</div>
+          </div>
+        </div>
+
+        <div class="bezel-shell reveal-item delay-100">
+          <div class="bezel-core p-6 sm:p-8 flex flex-col justify-between min-h-[280px]">
+            <div class="space-y-3">
+              <div class="w-10 h-10 rounded-2xl bg-slate-100 text-slate-900 flex items-center justify-center font-bold">
+                0
+              </div>
+              <h3 class="text-xl font-bold font-heading text-slate-900">0 очередей и толкотни</h3>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Строгий клубный лимит резидентов. Вы тренируетесь в своем темпе, не ожидая освобождения нужного тренажера или снаряда.
+              </p>
+            </div>
+            <div class="text-[11px] text-slate-500 font-semibold">Контроль трафика через умный доступ</div>
+          </div>
+        </div>
+
+        <div class="bezel-shell reveal-item delay-200">
+          <div class="bezel-core p-6 sm:p-8 flex flex-col justify-between min-h-[280px]">
+            <div class="space-y-3">
+              <div class="w-10 h-10 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-bold">
+                ★
+              </div>
+              <h3 class="text-xl font-bold font-heading text-slate-900">Методология чемпионов</h3>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Каждый тренер клуба проходит строгую внутреннюю аттестацию лично у чемпионки России Екатерины Платошиной.
+              </p>
+            </div>
+            <div class="text-[11px] text-slate-500 font-semibold">Индивидуальный подбор тренировок</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: ОСНОВАТЕЛЬ И ФИЛОСОФИЯ (Full Height Stage Photo id9QPYckzXg.jpg)
+       ======================================================================== -->
+  <section id="founder" class="py-20 sm:py-32 relative overflow-hidden bg-white border-t border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left: Stage Photo id9QPYckzXg.jpg (col-span-5) -->
+        <div class="lg:col-span-5 reveal-item">
+          <div class="bezel-shell relative max-w-md mx-auto group">
+            <div class="bezel-core overflow-hidden relative aspect-[3/4.5] sm:aspect-[3/4.2] bg-slate-950 flex items-center justify-center">
+              
+              <img 
+                src="id9QPYckzXg.jpg" 
+                alt="Екатерина Платошина — Чемпионка России по бодибилдингу и фитнесу на сцене" 
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                loading="lazy"
+              >
+
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 backdrop-blur-md bg-white/90 border border-white/50 px-3.5 py-1.5 rounded-full shadow-lg">
+                <span class="text-[10px] font-extrabold tracking-widest uppercase text-slate-900">
+                  Соревновательный масштаб
+                </span>
+              </div>
+
+              <div class="absolute bottom-5 left-5 right-5 backdrop-blur-xl bg-slate-900/85 border border-slate-700/60 p-4 rounded-2xl text-white">
+                <div class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Личные титулы</div>
+                <div class="text-base font-bold font-heading mt-0.5">Абсолютная чемпионка России</div>
+                <div class="text-[11px] text-slate-300 mt-0.5">Президент федерации РББС • Мастер спорта РФ</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Philosophy & Editorial Story (col-span-7) -->
+        <div class="lg:col-span-7 space-y-6 sm:space-y-8 text-left reveal-item delay-100">
+          
+          <div class="badge-eyebrow">
+            <span class="badge-dot"></span> ОСНОВАТЕЛЬ И ФИЛОСОФИЯ
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-heading text-slate-900 leading-[1.15]">
+            «Когда клуб создает чемпион, стандарты становятся бескомпромиссными»
+          </h2>
+
+          <blockquote class="p-6 rounded-2xl bg-slate-50 border-l-4 border-slate-900 text-slate-700 text-sm sm:text-base leading-relaxed italic shadow-sm">
+            «Я посвятила спорту высших достижений больше 12 лет. На сцене и на тренировках важен каждый миллиметр угла скамьи, плотность рукоятки, температура в зале и свежесть воздуха. Открывая "Платинум" в родной Сызрани, я поставила цель: дать жителям города клуб, который ни в чем не уступает флагманским фитнес-проектам столицы.»
+          </blockquote>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-3.5">
+              <div class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">
+                ✓
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">Президент федерации РББС</h4>
+                <p class="text-xs text-slate-500 leading-normal">Развитие бодибилдинга, фитнеса и силовых дисциплин в регионе на официальном государственном уровне.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">
+                ✓
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">Мастер спорта России</h4>
+                <p class="text-xs text-slate-500 leading-normal">Глубокое понимание анатомии, физиологии и безопасного построения сильного, эстетичного тела без вреда здоровью.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">
+                ✓
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">Индивидуальный контроль качества</h4>
+                <p class="text-xs text-slate-500 leading-normal">Екатерина регулярно тренируется в клубе и лично курирует подготовку тренерского состава и сервис для резидентов.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-slate-200/80">
+            <div>
+              <div class="text-lg font-bold font-heading text-slate-900">Екатерина Платошина</div>
+              <div class="text-xs text-slate-500">Основатель фитнес-клуба «Платинум»</div>
+            </div>
+
+            <button data-open-modal data-plan="Персональная консультация" class="btn-primary !py-2.5 !px-5 !text-xs self-start sm:self-auto">
+              <span>Задать вопрос Екатерине</span>
+              <span class="btn-icon-bubble !w-6 !h-6">
+                <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: КЛУБНЫЕ КАРТЫ И АБОНЕМЕНТЫ (Scroll Snap & High Contrast)
+       ======================================================================== -->
+  <section id="tariffs" class="py-20 sm:py-32 bg-slate-50/80 border-y border-slate-200/60 relative overflow-x-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-3">
+        <div class="badge-eyebrow justify-center">
+          <span class="badge-dot"></span> ТАРИФНЫЕ ПЛАНЫ И ЧЛЕНСТВО
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-heading text-slate-900">
+          Клубные карты «Платинум»
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Прозрачные условия без скрытых доплат. Выберите формат посещения, подходящий под ваш персональный график.
+        </p>
+
+        <!-- Category Switcher Tabs (Scroll Snap & High Contrast) -->
+        <div class="inline-flex overflow-x-auto flex snap-x snap-mandatory scroll-smooth no-scrollbar gap-2 p-1.5 bg-slate-200/80 rounded-full max-w-full mt-4">
+          <button class="filter-tab-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-900 text-white snap-center shrink-0 shadow-sm" data-filter="all">Все</button>
+          <button class="filter-tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-slate-700 hover:text-slate-950 transition-all snap-center shrink-0" data-filter="full">Безлимит</button>
+          <button class="filter-tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-slate-700 hover:text-slate-950 transition-all snap-center shrink-0" data-filter="day">Дневной</button>
+          <button class="filter-tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-slate-700 hover:text-slate-950 transition-all snap-center shrink-0" data-filter="weekend">Выходной</button>
+          <button class="filter-tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-slate-700 hover:text-slate-950 transition-all snap-center shrink-0" data-filter="junior">Юниор / Дети</button>
+        </div>
+      </div>
+
+      <!-- Tariffs Cards Scroll Snap Container (Mobile Swipe & Desktop Grid) -->
+      <div class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-5 pb-8 pt-2 px-4 -mx-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 items-stretch">
+        
+        <!-- CARD 1: ПОЛНЫЙ БЕЗЛИМИТ (HIT - Dark Double-Bezel Edition) -->
+        <div class="tariff-card bezel-shell-dark reveal-item snap-center shrink-0 w-[85vw] sm:w-[70vw] md:w-auto max-w-[360px] md:max-w-none relative flex flex-col justify-between" data-category="full">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-slate-200 via-white to-slate-200 text-slate-950 font-extrabold text-[11px] tracking-wider uppercase shadow-md">
+            ★ ВЫБОР 85% РЕЗИДЕНТОВ
+          </div>
+
+          <div class="bezel-core-dark p-6 sm:p-8 flex flex-col justify-between text-white flex-1">
+            <div>
+              <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                <div>
+                  <h3 class="text-xl font-bold font-heading">Полный Безлимит</h3>
+                  <p class="text-xs text-slate-400 mt-0.5">Максимальная свобода тренировок</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-2xl sm:text-3xl font-extrabold font-heading text-white">от 3 200 ₽</div>
+                  <div class="text-[11px] text-slate-400">в месяц</div>
+                </div>
+              </div>
+
+              <div class="mt-4 p-3 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between text-xs">
+                <span class="text-slate-400">Время посещения:</span>
+                <span class="font-bold text-white">Пн-Вс: 07:00 – 23:00 (Безлимит)</span>
+              </div>
+
+              <ul class="mt-6 space-y-3 text-xs sm:text-sm text-slate-300">
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Полный доступ ко всем зонам 1340 м²
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Зал групповых программ без ограничений
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Вводная тренировка с топ-наставником
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Солярий (30 минут включено в карту)
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Раздевалки с душевыми и личным шкафчиком
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Заморозка карты до 45 дней + 2 гостевых визита
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-slate-800">
+              <button data-open-modal data-plan="Карта «Полный Безлимит»" class="w-full py-3.5 px-6 rounded-full bg-white text-slate-950 font-bold text-sm tracking-wide hover:bg-slate-100 transition-colors flex items-center justify-between shadow-lg">
+                <span>Оформить карту</span>
+                <span class="w-7 h-7 rounded-full bg-slate-950 text-white flex items-center justify-center text-xs">↗</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: ДНЕВНАЯ КАРТА (Silver Double-Bezel) -->
+        <div class="tariff-card bezel-shell reveal-item delay-100 snap-center shrink-0 w-[85vw] sm:w-[70vw] md:w-auto max-w-[360px] md:max-w-none flex flex-col justify-between" data-category="day">
+          <div class="bezel-core p-6 sm:p-8 flex flex-col justify-between flex-1">
+            <div>
+              <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                <div>
+                  <h3 class="text-xl font-bold font-heading text-slate-900">Дневная Карта</h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Для тех, кто свободен днем</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900">от 2 400 ₽</div>
+                  <div class="text-[11px] text-slate-500">в месяц</div>
+                </div>
+              </div>
+
+              <div class="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between text-xs">
+                <span class="text-slate-500">Время посещения:</span>
+                <span class="font-bold text-slate-900">07:00 – 17:00 ежедневно</span>
+              </div>
+
+              <ul class="mt-6 space-y-3 text-xs sm:text-sm text-slate-600">
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Спокойные тренировки в просторном зале
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Все тренажеры, кардио и свободные веса
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Уютные раздевалки с душевыми
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Вводный инструктаж по безопасности
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Заморозка до 20 дней
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-slate-100">
+              <button data-open-modal data-plan="Карта «Дневная»" class="btn-primary w-full justify-between">
+                <span>Оформить карту</span>
+                <span class="btn-icon-bubble">↗</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: ВЫХОДНОГО ДНЯ (Silver Double-Bezel) -->
+        <div class="tariff-card bezel-shell reveal-item delay-200 snap-center shrink-0 w-[85vw] sm:w-[70vw] md:w-auto max-w-[360px] md:max-w-none flex flex-col justify-between" data-category="weekend">
+          <div class="bezel-core p-6 sm:p-8 flex flex-col justify-between flex-1">
+            <div>
+              <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                <div>
+                  <h3 class="text-xl font-bold font-heading text-slate-900">Выходного Дня</h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Суббота и Воскресенье</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900">от 1 800 ₽</div>
+                  <div class="text-[11px] text-slate-500">в месяц</div>
+                </div>
+              </div>
+
+              <div class="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between text-xs">
+                <span class="text-slate-500">Время посещения:</span>
+                <span class="font-bold text-slate-900">Сб-Вс: 08:00 – 22:00</span>
+              </div>
+
+              <ul class="mt-6 space-y-3 text-xs sm:text-sm text-slate-600">
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Идеально при плотном рабочем графике
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Безлимитное пребывание в выходные
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Доступ ко всем зонам и тренажерам
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Раздевалки с душевыми и шкафчиками
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-slate-100">
+              <button data-open-modal data-plan="Карта «Выходного Дня»" class="btn-primary w-full justify-between">
+                <span>Оформить карту</span>
+                <span class="btn-icon-bubble">↗</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: ЮНИОР 14-17 ЛЕТ -->
+        <div class="tariff-card bezel-shell reveal-item snap-center shrink-0 w-[85vw] sm:w-[70vw] md:w-auto max-w-[360px] md:max-w-none flex flex-col justify-between" data-category="junior">
+          <div class="bezel-core p-6 sm:p-8 flex flex-col justify-between flex-1">
+            <div>
+              <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                <div>
+                  <h3 class="text-xl font-bold font-heading text-slate-900">Карта «Юниор»</h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Для подростков 14–17 лет</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900">от 2 100 ₽</div>
+                  <div class="text-[11px] text-slate-500">в месяц</div>
+                </div>
+              </div>
+
+              <div class="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between text-xs">
+                <span class="text-slate-500">Время посещения:</span>
+                <span class="font-bold text-slate-900">Ежедневно до 18:00</span>
+              </div>
+
+              <ul class="mt-6 space-y-3 text-xs sm:text-sm text-slate-600">
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Постановка правильной техники и осанки
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Кураторство дежурного тренера в зале
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Безопасные адаптивные нагрузки
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Чистые раздевалки и душевые
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-slate-100">
+              <button data-open-modal data-plan="Карта «Юниор»" class="btn-primary w-full justify-between">
+                <span>Оформить карту</span>
+                <span class="btn-icon-bubble">↗</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5: ДЕТСКИЙ ПЛАТИНУМ -->
+        <div class="tariff-card bezel-shell reveal-item delay-100 snap-center shrink-0 w-[85vw] sm:w-[70vw] md:w-auto max-w-[360px] md:max-w-none flex flex-col justify-between" data-category="junior">
+          <div class="bezel-core p-6 sm:p-8 flex flex-col justify-between flex-1">
+            <div>
+              <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                <div>
+                  <h3 class="text-xl font-bold font-heading text-slate-900">Platinum Kids</h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Для детей 6–13 лет</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900">от 2 500 ₽</div>
+                  <div class="text-[11px] text-slate-500">блок занятий</div>
+                </div>
+              </div>
+
+              <div class="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between text-xs">
+                <span class="text-slate-500">Формат:</span>
+                <span class="font-bold text-slate-900">Мини-группы & Секции</span>
+              </div>
+
+              <ul class="mt-6 space-y-3 text-xs sm:text-sm text-slate-600">
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                  ОФП, гимнастика, укрепление спины
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Игровая форма тренировок с инструктором
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                  Формирование любви к спорту с детства
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-slate-100">
+              <button data-open-modal data-plan="Карта «Platinum Kids»" class="btn-primary w-full justify-between">
+                <span>Оформить карту</span>
+                <span class="btn-icon-bubble">↗</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: ТРЕНЕРСКИЙ СОСТАВ (Certified Masters of Sports)
+       ======================================================================== -->
+  <section id="coaches" class="py-20 sm:py-32 bg-white border-b border-slate-200/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
+        <div class="space-y-3 max-w-2xl">
+          <div class="badge-eyebrow">
+            <span class="badge-dot"></span> КОМАНДА НАСТАВНИКОВ
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-heading text-slate-900">
+            Тренеры с чемпионским ДНК
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Каждый инструктор клуба прошел профессиональную сертификацию и работает по научным протоколам периодизации нагрузок.
+          </p>
+        </div>
+
+        <button data-open-modal data-plan="Подбор персонального тренера" class="btn-secondary self-start md:self-auto">
+          <span>Подобрать наставника под цель</span>
+          <span class="text-xs">↗</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Coach 1: Екатерина Платошина -->
+        <div class="bezel-shell reveal-item group">
+          <div class="bezel-core p-5 flex flex-col justify-between">
+            <div class="aspect-[3/3.8] rounded-2xl overflow-hidden bg-slate-100 mb-4 relative">
+              <img src="UywzjmAaMm0.jpg" alt="Екатерина Платошина" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-slate-900 text-white">
+                Шеф-наставник
+              </span>
+            </div>
+            <div>
+              <h3 class="text-base font-bold font-heading text-slate-900">Екатерина Платошина</h3>
+              <p class="text-xs text-slate-500 font-medium">Президент РББС • МС РФ</p>
+              <p class="text-xs text-slate-600 mt-2 line-clamp-3">
+                Абсолютная чемпионка России. Эксперт по соревновательной подготовке и женской трансформации.
+              </p>
+            </div>
+            <button data-open-modal data-plan="Тренировка с Екатериной Платошиной" class="mt-4 w-full py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-900 transition-colors">
+              Записаться
+            </button>
+          </div>
+        </div>
+
+        <!-- Coach 2: Александр Волков -->
+        <div class="bezel-shell reveal-item delay-100 group">
+          <div class="bezel-core p-5 flex flex-col justify-between">
+            <div class="aspect-[3/3.8] rounded-2xl overflow-hidden bg-slate-800 mb-4 relative flex items-center justify-center text-slate-400">
+              <div class="text-center p-4">
+                <div class="w-12 h-12 rounded-full bg-slate-700 mx-auto flex items-center justify-center text-white text-lg font-bold mb-2">АВ</div>
+                <span class="text-xs text-slate-300">Старший тренер</span>
+              </div>
+              <span class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-white text-slate-900">
+                Силовой тренинг
+              </span>
+            </div>
+            <div>
+              <h3 class="text-base font-bold font-heading text-slate-900">Александр Волков</h3>
+              <p class="text-xs text-slate-500 font-medium">Мастер спорта по пауэрлифтингу</p>
+              <p class="text-xs text-slate-600 mt-2 line-clamp-3">
+                Специалист по набору мышечной массы, коррекции осанки и реабилитации после травм спины.
+              </p>
+            </div>
+            <button data-open-modal data-plan="Тренировка с Александром Волковым" class="mt-4 w-full py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-900 transition-colors">
+              Записаться
+            </button>
+          </div>
+        </div>
+
+        <!-- Coach 3: Дарья Соколова -->
+        <div class="bezel-shell reveal-item delay-200 group">
+          <div class="bezel-core p-5 flex flex-col justify-between">
+            <div class="aspect-[3/3.8] rounded-2xl overflow-hidden bg-slate-800 mb-4 relative flex items-center justify-center text-slate-400">
+              <div class="text-center p-4">
+                <div class="w-12 h-12 rounded-full bg-slate-700 mx-auto flex items-center justify-center text-white text-lg font-bold mb-2">ДС</div>
+                <span class="text-xs text-slate-300">Фитнес-эксперт</span>
+              </div>
+              <span class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-white text-slate-900">
+                Стретчинг & Body
+              </span>
+            </div>
+            <div>
+              <h3 class="text-base font-bold font-heading text-slate-900">Дарья Соколова</h3>
+              <p class="text-xs text-slate-500 font-medium">Сертифицированный тренер FPA</p>
+              <p class="text-xs text-slate-600 mt-2 line-clamp-3">
+                Функциональный тренинг, растяжка, снижение жировой массы и гибкость без изнурительных диет.
+              </p>
+            </div>
+            <button data-open-modal data-plan="Тренировка с Дарьей Соколовой" class="mt-4 w-full py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-900 transition-colors">
+              Записаться
+            </button>
+          </div>
+        </div>
+
+        <!-- Coach 4: Максим Лебедев -->
+        <div class="bezel-shell reveal-item delay-300 group">
+          <div class="bezel-core p-5 flex flex-col justify-between">
+            <div class="aspect-[3/3.8] rounded-2xl overflow-hidden bg-slate-800 mb-4 relative flex items-center justify-center text-slate-400">
+              <div class="text-center p-4">
+                <div class="w-12 h-12 rounded-full bg-slate-700 mx-auto flex items-center justify-center text-white text-lg font-bold mb-2">МЛ</div>
+                <span class="text-xs text-slate-300">Кроссфит-атлет</span>
+              </div>
+              <span class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-white text-slate-900">
+                Кроссфит & Выносливость
+              </span>
+            </div>
+            <div>
+              <h3 class="text-base font-bold font-heading text-slate-900">Максим Лебедев</h3>
+              <p class="text-xs text-slate-500 font-medium">КМС по тяжелой атлетике</p>
+              <p class="text-xs text-slate-600 mt-2 line-clamp-3">
+                Высокоинтенсивные интервальные тренировки (HIIT), взрывная сила и функциональное развитие.
+              </p>
+            </div>
+            <button data-open-modal data-plan="Тренировка с Максимом Лебедевым" class="mt-4 w-full py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-900 transition-colors">
+              Записаться
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: БЫСТРАЯ ЗАПИСЬ НА ТЕСТ-ДРАЙВ (Lead Capture Card)
+       ======================================================================== -->
+  <section class="py-16 sm:py-24 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(148,163,184,0.1),transparent_50%)] pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <div class="lg:col-span-6 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/10 text-slate-200 border border-white/10">
+            Бесплатный визит
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold font-heading tracking-tight leading-tight">
+            Опробуйте клуб «Платинум» до покупки карты
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Оставьте заявку и получите персональный гостевой визит: проведите полноценную тренировку во всех зонах 1340 м², оцените зал групповых занятий, чистые раздевалки с душевыми и проконсультируйтесь с тренером.
+          </p>
+          <div class="flex items-center gap-6 pt-2 text-xs text-slate-400">
+            <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Без очередей</span>
+            <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Бесплатная консультация</span>
+            <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Душевые и солярий</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="backdrop-blur-xl bg-white/10 border border-white/15 p-6 sm:p-8 rounded-3xl shadow-2xl">
+            <form id="lead-section-form" class="space-y-4">
+              <div>
+                <label for="lead-name" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Ваше имя</label>
+                <input 
+                  type="text" 
+                  id="lead-name" 
+                  required 
+                  placeholder="Иван" 
+                  class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-white transition-colors"
+                >
+              </div>
+
+              <div>
+                <label for="lead-phone" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Номер телефона</label>
+                <input 
+                  type="tel" 
+                  id="lead-phone" 
+                  required 
+                  placeholder="+7 (___) ___-__-__" 
+                  class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-white transition-colors"
+                >
+              </div>
+
+              <div>
+                <label for="lead-goal" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Основная цель</label>
+                <select id="lead-goal" class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-white/20 text-white text-sm focus:outline-none focus:border-white transition-colors">
+                  <option value="Рельеф и мышцы">Набор мышечной массы и рельеф</option>
+                  <option value="Похудение">Снижение веса и тонус</option>
+                  <option value="Здоровье и осанка">Здоровая спина и выносливость</option>
+                  <option value="Групповые занятия">Групповые программы и кардио</option>
+                </select>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 px-6 rounded-full bg-white text-slate-950 font-bold text-sm tracking-wide hover:bg-slate-100 transition-all flex items-center justify-between shadow-lg">
+                <span>Забронировать гостевой визит</span>
+                <span class="w-7 h-7 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs">↗</span>
+              </button>
+
+              <p class="text-[11px] text-slate-400 text-center">
+                Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
+              </p>
+            </form>
+
+            <div id="lead-success-msg" class="hidden text-center py-8 space-y-3">
+              <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center text-xl font-bold">✓</div>
+              <h3 class="text-xl font-bold font-heading">Заявка принята!</h3>
+              <p class="text-xs text-slate-300 max-w-xs mx-auto">
+                Наш администратор свяжется с вами в течение 10 минут и забронирует удобное время для визита.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: FAQ (Часто задаваемые вопросы - Zero Saunas)
+       ======================================================================== -->
+  <section id="faq" class="py-20 sm:py-28 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto mb-12 sm:mb-16 space-y-3">
+        <div class="badge-eyebrow justify-center">
+          <span class="badge-dot"></span> ВОПРОСЫ И ОТВЕТЫ
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-heading text-slate-900">
+          Все, что нужно знать перед первым визитом
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- FAQ 1 -->
+        <div class="bezel-shell">
+          <div class="bezel-core p-5 sm:p-6">
+            <button class="faq-toggle w-full flex items-center justify-between text-left gap-4" aria-expanded="false">
+              <span class="text-sm sm:text-base font-bold text-slate-900 font-heading">Что входит в бесплатный гостевой визит?</span>
+              <span class="faq-icon text-xl text-slate-400 transition-transform duration-300 font-bold">+</span>
+            </button>
+            <div class="faq-content hidden pt-3 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-3">
+              В гостевой визит включен 1 день полного тест-драйва всех зон клуба: тренажерный зал, кардиозона, зона функционального тренинга, зал групповых занятий, вводный инструктаж от дежурного тренера по технике безопасности, а также просторные чистые раздевалки с душевыми и солярием.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="bezel-shell">
+          <div class="bezel-core p-5 sm:p-6">
+            <button class="faq-toggle w-full flex items-center justify-between text-left gap-4" aria-expanded="false">
+              <span class="text-sm sm:text-base font-bold text-slate-900 font-heading">Где расположен клуб и есть ли парковка?</span>
+              <span class="faq-icon text-xl text-slate-400 transition-transform duration-300 font-bold">+</span>
+            </button>
+            <div class="faq-content hidden pt-3 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-3">
+              Клуб находится в самом центре Сызрани по адресу: <strong class="text-slate-900">ул. Советская, д. 146</strong>. Для всех резидентов клуба предусмотрена удобная бесплатная асфальтированная парковка с прямым доступом к входной группе.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="bezel-shell">
+          <div class="bezel-core p-5 sm:p-6">
+            <button class="faq-toggle w-full flex items-center justify-between text-left gap-4" aria-expanded="false">
+              <span class="text-sm sm:text-base font-bold text-slate-900 font-heading">Можно ли заморозить абонемент, если я уеду в отпуск?</span>
+              <span class="faq-icon text-xl text-slate-400 transition-transform duration-300 font-bold">+</span>
+            </button>
+            <div class="faq-content hidden pt-3 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-3">
+              Да, во все годовые и полугодовые клубные карты включена опция бесплатной заморозки (от 20 до 45 дней в зависимости от выбранного тарифа). Заморозку можно активировать онлайн через администратора в Telegram или WhatsApp.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="bezel-shell">
+          <div class="bezel-core p-5 sm:p-6">
+            <button class="faq-toggle w-full flex items-center justify-between text-left gap-4" aria-expanded="false">
+              <span class="text-sm sm:text-base font-bold text-slate-900 font-heading">Что нужно взять с собой на первую тренировку?</span>
+              <span class="faq-icon text-xl text-slate-400 transition-transform duration-300 font-bold">+</span>
+            </button>
+            <div class="faq-content hidden pt-3 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-3">
+              Вам понадобятся: удобная спортивная форма, чистая сменная обувь (кроссовки) и документ, удостоверяющий личность (для первого визита и оформления клубной карты). Индивидуальные шкафчики с электронными замками, питьевая вода и фены в раздевалках предоставляются бесплатно.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="bezel-shell">
+          <div class="bezel-core p-5 sm:p-6">
+            <button class="faq-toggle w-full flex items-center justify-between text-left gap-4" aria-expanded="false">
+              <span class="text-sm sm:text-base font-bold text-slate-900 font-heading">Проводятся ли тренировки для новичков без опыта?</span>
+              <span class="faq-icon text-xl text-slate-400 transition-transform duration-300 font-bold">+</span>
+            </button>
+            <div class="faq-content hidden pt-3 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 mt-3">
+              Определенно да! Более 60% наших новых резидентов начинают тренироваться с нуля. Мы проводим вводное фитнес-тестирование, объясняем биомеханику тренажеров и подбираем комфортный стартовый протокол, исключающий травмы и перетренированность.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: КОНТАКТЫ И ИНТЕРАКТИВНАЯ КАРТА (г. Сызрань, ул. Советская 146)
+       ======================================================================== -->
+  <section id="contacts" class="py-20 sm:py-32 bg-slate-50 border-t border-slate-200/80 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+        
+        <!-- Contact Details Card (col-span-5) -->
+        <div class="lg:col-span-5 bezel-shell reveal-item flex flex-col justify-between">
+          <div class="bezel-core p-6 sm:p-8 flex flex-col justify-between h-full space-y-8">
+            
+            <div class="space-y-3">
+              <div class="badge-eyebrow">
+                <span class="badge-dot"></span> ЛОКАЦИЯ И СВЯЗЬ
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900">
+                Ждем вас в «Платинум»
+              </h2>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Сердце Сызрани. Удобный подъезд, собственная парковка и первоклассный сервис с порога клуба.
+              </p>
+            </div>
+
+            <!-- Contact Specs -->
+            <div class="space-y-5 text-sm">
+              <div class="flex items-start gap-3.5">
+                <div class="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0 text-slate-900">
+                  📍
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Адрес клуба</div>
+                  <div class="font-bold text-slate-900 mt-0.5">Самарская область, г. Сызрань, ул. Советская, д. 146</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Центральный район, отдельный парадный вход</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5">
+                <div class="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0 text-slate-900">
+                  ⏰
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">График работы</div>
+                  <div class="font-bold text-slate-900 mt-0.5">Будни: 07:00 – 23:00</div>
+                  <div class="font-bold text-slate-900">Выходные и праздники: 08:00 – 22:00</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5">
+                <div class="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0 text-slate-900">
+                  📞
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Телефон ресепшн</div>
+                  <a href="tel:+79278900011" class="font-bold text-slate-900 text-base hover:text-slate-600 transition-colors block mt-0.5">
+                    +7 (927) 890-00-11
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Messengers and Navigators Direct Links -->
+            <div class="pt-6 border-t border-slate-100 space-y-3">
+              <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Быстрый маршрут и мессенджеры:</div>
+              <div class="grid grid-cols-2 gap-2.5">
+                <a href="https://yandex.ru/maps/?text=Сызрань+Советская+146" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold text-center transition-colors flex items-center justify-center gap-1.5">
+                  <span>🗺️</span> Яндекс Карты
+                </a>
+                <a href="https://2gis.ru/search/Сызрань%20Советская%20146" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold text-center transition-colors flex items-center justify-center gap-1.5">
+                  <span>🧭</span> 2ГИС
+                </a>
+              </div>
+              <div class="grid grid-cols-2 gap-2.5">
+                <a href="https://t.me/" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold text-center transition-colors flex items-center justify-center gap-1.5">
+                  <span>✈️</span> Telegram
+                </a>
+                <a href="https://wa.me/79278900011" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold text-center transition-colors flex items-center justify-center gap-1.5">
+                  <span>💬</span> WhatsApp
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Interactive Map Visual Card (col-span-7) -->
+        <div class="lg:col-span-7 bezel-shell reveal-item delay-100">
+          <div class="bezel-core p-2 sm:p-3 overflow-hidden relative min-h-[420px] h-full flex flex-col">
+            
+            <div class="relative w-full h-full min-h-[380px] rounded-[calc(2rem-0.75rem)] overflow-hidden bg-slate-900 flex items-center justify-center">
+              
+              <iframe 
+                src="https://yandex.ru/map-widget/v1/?ll=48.468205%2C53.155894&z=16&pt=48.468205%2C53.155894%2Cpm2rdm" 
+                class="w-full h-full border-0 absolute inset-0 filter saturate-75 contrast-105"
+                title="Фитнес-клуб Платинум на карте Сызрани"
+                loading="lazy"
+              ></iframe>
+
+              <div class="absolute top-4 left-4 backdrop-blur-xl bg-slate-900/90 text-white p-3.5 rounded-2xl shadow-xl border border-white/10 max-w-xs pointer-events-none">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+                  <span class="text-xs font-bold font-heading">Клуб «Платинум»</span>
+                </div>
+                <div class="text-[11px] text-slate-300 mt-1">г. Сызрань, ул. Советская 146</div>
+              </div>
+
+              <a 
+                href="https://yandex.ru/maps/?rtext=~53.155894,48.468205" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="absolute bottom-4 right-4 backdrop-blur-md bg-white text-slate-950 font-bold text-xs px-4 py-2.5 rounded-full shadow-xl hover:bg-slate-100 transition-colors flex items-center gap-1.5"
+              >
+                <span>Проложить маршрут</span>
+                <span>↗</span>
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="bg-slate-950 text-slate-400 py-16 sm:py-20 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        
+        <div class="md:col-span-5 space-y-4">
+          <div class="w-36 h-10 overflow-hidden flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" class="w-full h-full object-contain">
+              <g transform="translate(210, 10)">
+                <rect x="0" y="0" width="80" height="65" fill="none" stroke="#FFFFFF" stroke-width="3" />
+                <rect x="20" y="16" width="12" height="49" fill="#FFFFFF" />
+                <rect x="48" y="16" width="12" height="49" fill="#FFFFFF" />
+                <path d="M80,3 L81.5,7.5 L86,9 L81.5,10.5 L80,15 L78.5,10.5 L74,9 L78.5,7.5 Z" fill="#FFFFFF" />
+              </g>
+              <text x="250" y="112" font-family="'Outfit', 'Plus Jakarta Sans', serif" font-weight="700" letter-spacing="6px" fill="#FFFFFF" font-size="28" text-anchor="middle">ПЛАТИНУМ</text>
+              <text x="250" y="136" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" letter-spacing="5px" fill="#94A3B8" font-size="12" text-anchor="middle">фитнес клуб</text>
+            </svg>
+          </div>
+          <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+            Премиальный фитнес-клуб в г. Сызрань. Создан абсолютной чемпионкой России Екатериной Платошиной. Пространство спорта, эстетики и здоровья.
+          </p>
+          <div class="text-[11px] text-slate-500">
+            г. Сызрань, ул. Советская, д. 146 • Тел: +7 (927) 890-00-11
+          </div>
+        </div>
+
+        <div class="md:col-span-4 space-y-2">
+          <div class="text-xs font-bold uppercase tracking-wider text-white">Разделы клуба</div>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <a href="#about" class="hover:text-white transition-colors">О клубе</a>
+            <a href="#zones" class="hover:text-white transition-colors">Зоны клуба</a>
+            <a href="#benefits" class="hover:text-white transition-colors">Преимущества</a>
+            <a href="#founder" class="hover:text-white transition-colors">Основатель</a>
+            <a href="#tariffs" class="hover:text-white transition-colors">Абонементы</a>
+            <a href="#coaches" class="hover:text-white transition-colors">Тренеры</a>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 space-y-3">
+          <div class="text-xs font-bold uppercase tracking-wider text-white">Тест-драйв клуба</div>
+          <p class="text-xs text-slate-400">Попробуйте клуб бесплатно перед покупкой карты.</p>
+          <button data-open-modal data-plan="Гостевой визит" class="w-full py-3 px-5 rounded-full bg-white text-slate-950 font-bold text-xs tracking-wider uppercase hover:bg-slate-200 transition-colors">
+            Записаться на визит
+          </button>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
+        <div>
+          © 2026 Фитнес-клуб «ПЛАТИНУМ». Все права защищены.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-slate-400 transition-colors">Политика конфиденциальности</a>
+          <a href="#" class="hover:text-slate-400 transition-colors">Правила посещения клуба</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MOBILE FIXED THUMB BAR (Quick Thumb Action on Smart Phones)
+       ======================================================================== -->
+  <div id="mobile-bottom-bar" class="fixed bottom-3 left-3 right-3 z-40 sm:hidden transition-all duration-300">
+    <div class="backdrop-blur-xl bg-slate-950/95 border border-slate-800 text-white rounded-2xl p-2.5 shadow-2xl flex items-center justify-between gap-2">
+      
+      <a href="tel:+79278900011" class="flex-1 py-3 px-3 rounded-xl bg-slate-900 text-center text-xs font-bold text-white border border-slate-700/60 active:scale-95 transition-transform flex items-center justify-center gap-1.5">
+        <span>📞</span> Позвонить
+      </a>
+
+      <button data-open-modal data-plan="Гостевой визит (Тест-драйв)" class="flex-[1.8] py-3 px-4 rounded-xl bg-white text-slate-950 text-center text-xs font-extrabold tracking-wide active:scale-95 transition-transform flex items-center justify-center gap-1.5 shadow-lg">
+        <span>Записаться на визит</span>
+        <span>↗</span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       INTERACTIVE BOOKING MODAL (Pop-Up Lead Dialog)
+       ======================================================================== -->
+  <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div id="modal-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-md transition-opacity"></div>
+
+    <div class="bezel-shell max-w-lg w-full relative z-10 mx-auto shadow-2xl">
+      <div class="bezel-core p-6 sm:p-8 bg-white relative">
+        
+        <button id="modal-close-btn" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-800 flex items-center justify-center text-sm font-bold transition-colors" aria-label="Закрыть">
+          ✕
+        </button>
+
+        <div class="space-y-1.5 mb-6 text-left">
+          <div class="badge-eyebrow">
+            <span class="badge-dot"></span> БЫСТРАЯ ЗАПИСЬ
+          </div>
+          <h3 class="text-2xl font-extrabold font-heading text-slate-900">
+            Гостевой визит в «Платинум»
+          </h3>
+          <p class="text-xs text-slate-500 leading-normal">
+            Оставьте телефон, и мы забронируем за вами персональный тест-драйв клуба или консультацию.
+          </p>
+        </div>
+
+        <form id="booking-form" class="space-y-4 text-left">
+          <div>
+            <label for="guest-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Ваше имя</label>
+            <input 
+              type="text" 
+              id="guest-name" 
+              required 
+              placeholder="Как к вам обращаться?" 
+              class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-slate-900 transition-colors"
+            >
+          </div>
+
+          <div>
+            <label for="guest-phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Номер телефона</label>
+            <input 
+              type="tel" 
+              id="guest-phone" 
+              required 
+              placeholder="+7 (___) ___-__-__" 
+              class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-slate-900 transition-colors"
+            >
+          </div>
+
+          <div>
+            <label for="modal-plan-select" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Выбранная программа / карта</label>
+            <select id="modal-plan-select" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-slate-900 transition-colors">
+              <option value="Гостевой визит (Тест-драйв)">Гостевой визит (Тест-драйв)</option>
+              <option value="Карта «Полный Безлимит»">Карта «Полный Безлимит»</option>
+              <option value="Карта «Дневная»">Карта «Дневная»</option>
+              <option value="Карта «Выходного Дня»">Карта «Выходного Дня»</option>
+              <option value="Карта «Юниор»">Карта «Юниор»</option>
+              <option value="Карта «Platinum Kids»">Карта «Platinum Kids»</option>
+              <option value="Подбор персонального тренера">Подбор персонального тренера</option>
+            </select>
+          </div>
+
+          <button type="submit" class="w-full btn-primary justify-center !py-3.5 mt-2">
+            <span>Подтвердить запись</span>
+            <span class="btn-icon-bubble">↗</span>
+          </button>
+
+          <p class="text-[10px] text-slate-400 text-center">
+            Конфиденциальность гарантируется. Звонок займет менее 2 минут.
+          </p>
+        </form>
+
+        <div id="form-success" class="hidden text-center py-8 space-y-4">
+          <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center text-2xl font-bold">
+            ✓
+          </div>
+          <h4 class="text-2xl font-extrabold font-heading text-slate-900">Вы успешно записаны!</h4>
+          <p class="text-xs text-slate-600 max-w-xs mx-auto leading-relaxed">
+            Мы уже получили ваши контактные данные. Наш фитнес-консультант позвонит вам для подтверждения времени визита.
+          </p>
+          <button onclick="document.getElementById('booking-modal').classList.add('hidden')" class="btn-secondary text-xs !py-2.5 !px-6">
+            Отлично, спасибо!
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
