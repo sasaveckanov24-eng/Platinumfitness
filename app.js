@@ -1,6 +1,7 @@
 /**
- * Platinum Fitness Club - Core Application Logic
+ * Quetheon Fit - Core Application Logic
  * Mobile-First UX, Fluid Micro-interactions & Modal Controller
+ * Slogan: Question Your Limits • Брось вызов пределам
  */
 
 document.addEventListener('DOMContentLoaded', () => {

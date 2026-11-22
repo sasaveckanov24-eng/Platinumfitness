@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 70" width="100%" height="100%">
+  <defs>
+    <linearGradient id="qfGradientWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <linearGradient id="accentGlowWhite" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#7DD3FC"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dynamic Athletic 'Q' Emblem -->
+  <g transform="translate(6, 7)">
+    <circle cx="28" cy="28" r="23" fill="none" stroke="url(#qfGradientWhite)" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="28" cy="28" r="9" fill="#FFFFFF" opacity="0.15"/>
+    <circle cx="28" cy="28" r="4.5" fill="url(#accentGlowWhite)"/>
+    <path d="M38 38 L52 52" stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round"/>
+    <path d="M44 20 L50 20 L50 26" fill="none" stroke="url(#accentGlowWhite)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="76" y="38" font-family="'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="24" letter-spacing="3.5px" fill="#FFFFFF">QUETHEON</text>
+
+  <rect x="248" y="20" width="46" height="22" rx="6" fill="#38BDF8"/>
+  <text x="271" y="35.5" font-family="'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="12" letter-spacing="2px" fill="#0F172A" text-anchor="middle">FIT</text>
+
+  <text x="77" y="54" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="8.5" letter-spacing="2.2px" fill="#94A3B8" text-transform="uppercase">QUESTION YOUR LIMITS</text>
+</svg>
